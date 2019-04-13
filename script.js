@@ -1,8 +1,19 @@
+var exports = module.exports = {};
+
+//----------------------------------------------------------------
+// Classes
+//----------------------------------------------------------------
+
 /**
+ * This is the Clue class. It creates a clue object.
  * 
- * @param {*} x 
+ * @constructor
+ * @param {number} x - the length of a black run.
+ * @property {number} lb - the length of the black run.
+ * @property {number} rS - the starting cell of the range.
+ * @property {number} rE - the ending cell of the range.
  */
-function Clue(x) {
+exports.Clue = function(x) {
     this.lb = x;
     this.rS = null;
     this.rE = null;
@@ -18,14 +29,19 @@ function Clue(x) {
     }
 }
 
+//----------------------------------------------------------------
+// Global Values
+//----------------------------------------------------------------
 
-// Global values
 var rowClues = new Array();
 var colClues = new Array();
 var boardSize = 5;
 var board = new Array(boardSize);
 
-// Set up test clues
+//----------------------------------------------------------------
+// Test
+//----------------------------------------------------------------
+
 function populateClues() {
     var x = Array(new Clue(1), new Clue(1));
     rowClues.push(x);
@@ -186,13 +202,13 @@ function printBoard() {
 
 
 
-// Solve test
+/*Solve test
 populateClues();
 initializeBoard(board);
 printBoard();
 solve();
 printBoard();
-
+*/
 
 /* Rule1B test
 var theClue = new Clue(3);
