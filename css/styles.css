@@ -1,0 +1,51 @@
+/* Color Palette
+    #1C0658 Dark Blue
+    #5C2686 Purple
+    #FF1690 Neon Pink
+    #F4D676 Yellow
+    #36CDC4 Neon Blue
+*/
+
+body {
+    background-color: #181818;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    padding: 5% 0;
+    color: white;
+}
+
+td {
+    border: 10px solid #181818;
+}
+
+.button {
+    background-image: linear-gradient(to bottom right, #FF1690, #36CDC4);
+    border: none;
+    color: #181818;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#board {
+    background-image: linear-gradient(to bottom right, #1C0658, #FF1690);
+    background-origin: border-box;
+    border-spacing: 5px;
+    border: 10px solid transparent;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+}

@@ -1,4 +1,4 @@
-var exports = module.exports = {};
+//var exports = module.exports = {};
 
 //----------------------------------------------------------------
 // Classes
@@ -13,21 +13,39 @@ var exports = module.exports = {};
  * @property {number} rS - the starting cell of the range.
  * @property {number} rE - the ending cell of the range.
  */
-exports.Clue = function(x) {
+function Clue(x) {
     this.lb = x;
     this.rS = null;
     this.rE = null;
+}
+Clue.prototype.setLB = function(x) {
+    this.lb = x;
+}
+Clue.prototype.setRS = function(x) {
+    this.rS = x;
+}
+Clue.prototype.setRE = function(x) {
+    this.rE = x;
+}
 
-    Clue.prototype.setLB = function(x) {
+/*
+module.exports = {
+    Clue: Clue
+}
+
+
+
+class Clue {
+    constructor(x) {
         this.lb = x;
-    }
-    Clue.prototype.setRS = function(x) {
-        this.rS = x;
-    }
-    Clue.prototype.setRE = function(x) {
-        this.rE = x;
+        this.rS = null;
+        this.rE = null;
     }
 }
+
+module.exports = Clue
+*/
+
 
 //----------------------------------------------------------------
 // Global Values
@@ -35,30 +53,12 @@ exports.Clue = function(x) {
 
 var rowClues = new Array();
 var colClues = new Array();
-var boardSize = 5;
+var boardSize = 0;
 var board = new Array(boardSize);
 
 //----------------------------------------------------------------
-// Test
+// Code
 //----------------------------------------------------------------
-
-function populateClues() {
-    var x = Array(new Clue(1), new Clue(1));
-    rowClues.push(x);
-    rowClues.push(Array(new Clue(5)));
-    rowClues.push(Array(new Clue(3)));
-    rowClues.push(Array(new Clue(1)));
-    rowClues.push(Array(new Clue(2)));
-
-    colClues.push(Array(new Clue(1)));
-    var y = Array(new Clue(3), new Clue(1));
-    colClues.push(y);
-    colClues.push(Array(new Clue(4)));
-    colClues.push(Array(new Clue(3)));
-    colClues.push(Array(new Clue(1)));
-}
-
-
 function initializeBoard(a) {
     for (var i = 0; i < boardSize; i++) {
         a[i] = new Array(boardSize);
