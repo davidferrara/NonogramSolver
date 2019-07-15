@@ -53,13 +53,43 @@ module.exports = Clue
 
 var rowClues = new Array();
 var colClues = new Array();
-var boardSize = 0;
-var board = new Array(boardSize);
+var boardSize = null;
+var board = null;
 
 //----------------------------------------------------------------
 // Code
 //----------------------------------------------------------------
+/**
+ * This is the changeBGColor function.
+ * It should change the table cell background to transparent.
+ */
+function changeBGColor() {
+    //change the color in the table.
+    var i = 2;
+    var j;
+    for (j = 0; j < boardSize; j++) {
+        var id = createID(i, j);
+        console.log(id);
+        document.getElementById(id).style.backgroundColor = "transparent";
+    }
+    i = 0;
+    for (j = 0; j < boardSize; j++) {
+        var id = createID(i, j);
+        console.log(id);
+        document.getElementById(id).style.backgroundColor = "transparent";
+    }
+    //document.getElementById('1.1').style.backgroundColor = "transparent";
+    console.log("in changeColor");
+}
+
+/**
+ * This function takes the 1D board array and creates a 2D array.
+ * It places "_" as an empty space in the board.
+ * 
+ * @param {array} a - the board Array.
+ */
 function initializeBoard(a) {
+    console.log("In initializeBoard.")
     for (var i = 0; i < boardSize; i++) {
         a[i] = new Array(boardSize);
         for (var j = 0; j < boardSize; j++) {
@@ -67,6 +97,7 @@ function initializeBoard(a) {
         }
     }
 }
+
 
 function solve() {
     getInitialRange(rowClues);
@@ -118,9 +149,14 @@ function solveLine(a, b, k) {
     console.log("Exiting solveLine function.");
 }
 
-
-// Calculates the initial run range estimates for each clue.
+/**
+ * This function calculates the initial run range estimates
+ * for each clue.
+ * 
+ * @param {array} a - the row or column clue array.
+ */
 function getInitialRange(a) {
+    console.log("In initialrange.")
     for (var x = 0; x < a.length; x++) {
         var clues = a[x];
         var k = clues.length;
@@ -198,6 +234,21 @@ function printBoard() {
         }
         console.log(temp);
     }
+}
+
+/**
+ * This function combines two numbers to create a string for the
+ * table cell ID.
+ * 
+ * @param {number} x - the column number.
+ * @param {number} y - the row number.
+ */
+function createID(x, y) {
+    var a = x.toString();
+    var b = ".";
+    var c = y.toString();
+    var result = a.concat(b, c);
+    return result;
 }
 
 
