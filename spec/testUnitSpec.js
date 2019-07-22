@@ -1,10 +1,47 @@
 /*
     Nonogram Solver TestUnit
 */
+const script = require("../script.js");
+
+describe("CreateID", function() {
+    it("should be able to combine 2 numbers and concat() them into a string", function() {
+        expect(script.createID).toBeDefined();
+        expect(script.createID(3, 5)).toEqual("3.5");
+    })
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------
 
 /**
  * This is the main test function.
  */
+/*
 function startTest() {
     console.log("In startTest.");
     testSetUp();
@@ -13,23 +50,26 @@ function startTest() {
     test1();
     console.log(rowClues[1][0]);
 }
+*/
 
 /**
  * This is the testSetUp function.
  * It sets up the test environment by creating a board and clues.
  */
+/*
 function testSetUp() {
     console.log("In testSetUp.");
     boardSize = 5;
     board = new Array(boardSize);
     populateClues();
     initializeBoard(board);
-}
+} */
 
 /**
  * This is the populateClues function.
  * It fills the rowClue and colClue arrays with arrays of Clue objects.
  */
+/*
 function populateClues() {
     console.log("In populateClues.")
     var x = Array(new Clue(1), new Clue(1));
@@ -67,3 +107,4 @@ function test1() {
 
     }
 }
+*/

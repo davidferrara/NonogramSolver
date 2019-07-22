@@ -1,5 +1,3 @@
-//var exports = module.exports = {};
-
 //----------------------------------------------------------------
 // Classes
 //----------------------------------------------------------------
@@ -27,24 +25,6 @@ Clue.prototype.setRS = function(x) {
 Clue.prototype.setRE = function(x) {
     this.rE = x;
 }
-
-/*
-module.exports = {
-    Clue: Clue
-}
-
-
-
-class Clue {
-    constructor(x) {
-        this.lb = x;
-        this.rS = null;
-        this.rE = null;
-    }
-}
-
-module.exports = Clue
-*/
 
 
 //----------------------------------------------------------------
@@ -289,3 +269,7 @@ console.log(testBoard);
 var seg = getSegments(testBoard);
 console.log(seg);
 */
+
+module.exports = {
+    createID: createID,
+};
